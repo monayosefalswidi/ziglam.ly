@@ -2,10 +2,10 @@
 
 namespace App\Filament\Resources;
 use App\Models\city;
-use App\Models\Zone;
+use App\Models\zone;
 use App\Filament\Resources\RepresentativeResource\Pages;
 use App\Filament\Resources\RepresentativeResource\RelationManagers;
-use App\Models\Representative;
+use App\Models\representative;
 use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
@@ -44,7 +44,6 @@ class RepresentativeResource extends Resource
                 ->tel(),
                 Forms\Components\TextInput::make('phone2')
                 ->label('other Phone number')
-                ->required()
                 ->tel(),
             
                 Forms\Components\Select::make('city_id')

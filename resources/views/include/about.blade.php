@@ -7,7 +7,7 @@
 				<div class="about-content">
 					<div class="row">
 						   <div class="col-sm-6 single-about-img">
-								<img class="" width="100%" src="assets/images/about/th9.jpg" alt="profile_image">
+								<img class=""  src="{{ asset('assets/images/about/about2.png') }}" alt="profile_image">
 						</div>
                         <div class="col-sm-offset-1 col-sm-5">
                         <div class="contact-add-head text-right m-4">
@@ -26,12 +26,29 @@
                             <h3 class="margin-top margin-bottom"> كيف يمكنك المساعدة ؟</h3>
 							</div>
                             <div class="single-about-txt text-right" >
-                                <h3>كل الأموال توصلني شخصيًا ويتم تحويلها عبر حسابات بنكية إلى الصديق سعيد قديح من فلسطين ومن معه من المُشرفين على المخيّم. مكاني في طرابلس ويوجد معاي فريق يستقبل من اللي يبوا يتبرعوا لكن ما عندهمش كيف يتحركوا. التواصل الشخصي معاي أبعثلي رسالة فيها مكانك باللوكيشن، وكم تقدر تحوّل ورقم موبايلك وحيتواصل معاك أقرب حد ليك. لو حابب توصل بنفسك فأنا شخصيًا نقدر نستقبل منك ومكاني بوستة وفيه أماكن في طرابلس أصحابها ثقة ونعرفهم شخصيًا وتوصل بعون اللهِ مكانها         
-                                </h3> 
+                                <h3>
+                   
+                   
+                        إن كُنت داخل ليبيا، يمكنك اختيار مدينتك من الموقع واختيار النقطة المناسبة.
+                
+                         وإن كُنت خارج ليبيا، المساهمة متاحة من الأردن عبر خدمتي زين وأمنية، ومن مصر عبر خدمة فودفون كاش، ومن باقي أنحاء العالم عبر باي بال والحساب البنكي أو USDT أو Wise أو Revolut أو Venmo أو Zelle. 
+                            
+لتفاصيل التبرع عبر ما سبق من الخدمات، يرجى التواصل معي عبر واتساب   0925271727                                 </h3> 
 							</div>
+							
+    				
 						</div>
 					</div>
 				</div>
 			</div>
-		</section><!--/.about-->
+		</section>
+			<div class=" contact-add-head text-center">
+             <h2 style="font-size: 40px;font-wight:bold; ">إجمالي التبرعات</h2>
+                	</br>
+             <h3 style="font-size: 30px; padding-bottom:2%;">  
+         
+       {{$counters->currency}}       {{$counters->counter}} 
+             </h3>
+            </div>
+                				<!--/.about-->
 		<!--about end -->

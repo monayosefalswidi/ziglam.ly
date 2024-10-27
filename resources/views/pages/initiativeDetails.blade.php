@@ -14,7 +14,7 @@
 				<div class="about-content isotope">
 					<div class="row">
 						   <div class="col-sm-12  ">
-								<img class="" width="100%" src="{{ asset('storage/'.$Initi->image) }}" alt="profile_image">
+								<img class="" width="100%" src="{{ asset('storage/app/public/'.$Initi->image) }}" alt="profile_image">
 					
                         <div class="contact-add-head text-right m-4">
 						<ul class="right-list margin-top">
@@ -32,5 +32,7 @@
 			</div>
 		</section><!--/.about-->
     @include('include.footer');
-
+</body>
+	
+    </html>
 @endsection

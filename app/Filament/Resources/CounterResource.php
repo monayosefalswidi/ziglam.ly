@@ -4,7 +4,7 @@ namespace App\Filament\Resources;
 
 use App\Filament\Resources\CounterResource\Pages;
 use App\Filament\Resources\CounterResource\RelationManagers;
-use App\Models\Counter;
+use App\Models\counter;
 use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
@@ -25,11 +25,14 @@ class CounterResource extends Resource
             ->schema([
              
                 Forms\Components\TextInput::make('counter')
-                ->label('Counter/ العدد')
+                ->label('Counter/ المبلغ')
+                ->required(),
+        
+                Forms\Components\TextInput::make('currency')
+                ->label('currency/ العملة')
                 ->required()
-                ->numeric()
-                ->rules('numeric'),
             ]);
+            
     }
 
     public static function table(Table $table): Table
@@ -37,6 +40,7 @@ class CounterResource extends Resource
         return $table
             ->columns([
                 Tables\Columns\TextColumn::make('counter')->sortable()->searchable(),
+                   Tables\Columns\TextColumn::make('currency')->sortable()->searchable(),
             ])
             ->filters([
                 //

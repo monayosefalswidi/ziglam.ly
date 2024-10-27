@@ -10,5 +10,6 @@ class counter extends Model
     use HasFactory;
     protected $fillable = [
         'counter',
+        'currency',
     ];
 }

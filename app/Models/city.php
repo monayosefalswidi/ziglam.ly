@@ -11,11 +11,12 @@ class city extends Model
     protected $fillable = [
         'name',
         'image',
+        'sort',
     ];
 
-    public function Zone()
+    public function zone()
     {
-        return $this->hasMany('App\Models\Zone');
+        return $this->hasMany('App\Models\zone');
     }
 
 }

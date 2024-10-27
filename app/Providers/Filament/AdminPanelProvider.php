@@ -34,11 +34,13 @@ class AdminPanelProvider extends PanelProvider
             ->profile()
            
             ->colors([
-                'primary' => Color::Amber,
+                 'primary' => Color::Amber,
+
+             
             ])
             ->navigationItems([
                 NavigationItem::make('Back Home')
-                    ->url('http://127.0.0.1:8000/')
+                    ->url('http://zeglam.ly/')
                     ->icon('heroicon-o-link')
                     ->sort(7)
             ])

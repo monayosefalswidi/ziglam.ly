@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\representative;
 use App\Models\initiative;
-use App\Models\Zone;
+use App\Models\zone;
 use App\Models\city;
 use App\Models\counter;
 
@@ -16,11 +16,13 @@ class indexController extends Controller
     public function index()
     {
         return view('index', [
-            'cities' => city::latest('id')->paginate(10),
+       
+            'cities' => city::orderBy('sort')->get(),
+           
             'Initiatives' => initiative::latest('id')->paginate(10),
             'representatives' => representative::latest('id')->paginate(10),
             'zones' => Zone::latest('id')->paginate(10),
-            'counters' => counter::latest('id')->paginate(10),
+            'counters' => counter::latest('id')->first(),
         ]);
     }
     public function zones(Request $request,$id)
@@ -28,7 +30,7 @@ class indexController extends Controller
         return view('pages.zones', [
             'city' =>city::latest('id')->where(['id'=>$id])->first(),
             'zones' => zone::latest('id')->where(['city_id'=>$id])->paginate(10),
-            'representatives' => representative::latest('id')->where(['zone_id'=>$id])->paginate(10)
+           'representatives' => representative::all()
         ]);
     }
     public function representative(Request $request,$id)

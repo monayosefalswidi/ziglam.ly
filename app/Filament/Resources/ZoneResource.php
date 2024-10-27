@@ -4,7 +4,7 @@ namespace App\Filament\Resources;
 
 use App\Filament\Resources\ZoneResource\Pages;
 use App\Filament\Resources\ZoneResource\RelationManagers;
-use App\Models\Zone;
+use App\Models\zone;
 use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
@@ -26,7 +26,7 @@ use Filament\Forms\Components\FileUpload;
 
 class ZoneResource extends Resource
 {
-    protected static ?string $model = Zone::class;
+    protected static ?string $model = zone::class;
     protected static ?int $navigationSort = 3;
     protected static ?string $navigationIcon = 'heroicon-o-building-office';
 
@@ -45,10 +45,17 @@ class ZoneResource extends Resource
             Forms\Components\TextInput::make('name')
                 ->required()
                 ->maxLength(255),
-                Forms\Components\Select::make('city_id')
+            Forms\Components\Select::make('city_id')
                 ->label('City')
-                ->relationship('city', 'name')
-    ]);
+                ->required()
+                ->relationship('city', 'name'),
+            Forms\Components\MarkdownEditor::make('note')
+                    ->columnspanfull(),
+             Forms\Components\TextInput::make('link')
+             ->url()
+             ->placeholder('http://zeglam.ly/'),
+            ]);
+            
     }
 
     public static function table(Table $table): Table
@@ -62,6 +69,8 @@ class ZoneResource extends Resource
            
             Tables\Columns\TextColumn::make('city.name')->label('City')
             ->sortable()->searchable(),
+            Tables\Columns\TextColumn::make('note')->sortable()->searchable(),
+             Tables\Columns\TextColumn::make('link')->sortable()->searchable(),
             ])
             ->filters([
                 Filter::make('name')

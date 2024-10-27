@@ -4,7 +4,7 @@ namespace App\Filament\Resources;
 
 use App\Filament\Resources\CityResource\Pages;
 use App\Filament\Resources\CityResource\RelationManagers;
-use App\Models\City;
+use App\Models\city;
 use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
@@ -45,6 +45,10 @@ class CityResource extends Resource
                     Forms\Components\TextInput::make('name')
                         ->required()
                         ->maxLength(255),
+                     Forms\Components\TextInput::make('sort')
+                        ->unique() 
+                        ->required()
+                        ->maxLength(255),
             ]);
     }
 
@@ -56,6 +60,7 @@ class CityResource extends Resource
             ->label('City image')
             ->disk('public'),
             Tables\Columns\TextColumn::make('name')->sortable()->searchable(),
+             Tables\Columns\TextColumn::make('sort')->sortable()->searchable(),
             ])
             ->filters([
                 Filter::make('name')

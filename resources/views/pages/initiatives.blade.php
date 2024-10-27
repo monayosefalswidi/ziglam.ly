@@ -16,9 +16,10 @@
 					<div class="profiles-content">
 						<div class="row">
                         @foreach( $Initiatives as $initiative)
-							<div class="my-image col-sm-3 margin-right">
-										<a href="{{ route('initiativeDetails', ['id' => $initiative->id]) }}" ><img  src="{{ asset('storage/'.$initiative->image) }}"></a>
-										<div class=" margin-top">{{$initiative->title}}</div>
+                      
+							<div class=" col-sm-3" style="margin-top:4%;margin-right:8%;">
+										<a href="{{ route('initiativeDetails', ['id' => $initiative->id]) }}" ><img  src="{{ asset('storage/app/public/'.$initiative->image) }}"></a>
+										<div class=" margin-top "><p class="h4" >{{$initiative->title}}</p></div>
 							</div>
                             @endforeach
                        
@@ -33,3 +34,8 @@
 
 @include('include.contact')
 @include('include.footer')
+</body>
+	
+    </html>
+
+    @endsection

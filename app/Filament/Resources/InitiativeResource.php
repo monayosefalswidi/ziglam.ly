@@ -4,7 +4,7 @@ namespace App\Filament\Resources;
 
 use App\Filament\Resources\InitiativeResource\Pages;
 use App\Filament\Resources\InitiativeResource\RelationManagers;
-use App\Models\Initiative;
+use App\Models\initiative;
 use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
@@ -45,8 +45,7 @@ class InitiativeResource extends Resource
                  ->hint('Upload an image'),
                  // endimage 
                  Forms\Components\TextInput::make('title')
-                     ->required()
-                     ->maxLength(255),
+                     ->required(),
                  Forms\Components\MarkdownEditor::make('description')
                     ->columnspanfull()    
                     ->required(),

@@ -14,7 +14,7 @@
         <title>mahmud zeglam</title>
 
         <!-- For favicon png -->
-		<link rel="shortcut icon" type="image/icon" href="{{URL::asset('assets/logo/favicon.png')}}"/>
+		<link rel="shortcut icon" type="image/icon" href="{{URL::asset('assets/logo/icon.png')}}"/>
        
         <!--font-awesome.min.css-->
         <link rel="stylesheet" href="{{URL::asset('assets/css/font-awesome.min.css')}}">
@@ -46,6 +46,6 @@
   
 
 	</head>
-    <body class="body">
+    <body>
 
 	@yield('content')

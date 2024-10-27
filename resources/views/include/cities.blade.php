@@ -4,23 +4,24 @@
 				<div class="section-heading text-center">
 					<h2>المــدن</h2>
 				</div>
-				<div class="container">
+				<div class="container" ">
 					<div class="portfolio-content">
 						<div class="isotope">
-							<div class="row">
+							<div class="row" dir="rtl" >
+							 
 								@foreach($cities as $city)
-                                <div class="col-sm-4">
-									<div class="item">
-										<img src="{{ asset('storage/'.$city->image) }}" width="100px"  alt="City image"/>
+								
+								      <div class="col-sm-4" >
+									<div class="item"> 
+									<a class="contact-add-head " href="{{ route('zones', ['id' => $city->id]) }}">
+										<img src="{{ asset('storage/app/public/'.$city->image) }}" width="100px"  alt="City image" />
 										<div class="isotope-overlay">
-                                              
-                                                <a class="contact-add-head " href="{{ route('zones', ['id' => $city->id]) }}">
 											     {{$city->name}}
-                                                </a>
-                                                
-										</div><!-- /.isotope-overlay -->
+										</div>
+										    </a><!-- /.isotope-overlay -->
 									</div><!-- /.item -->
-								</div><!-- /.col -->	
+								</div><!-- /.col -->
+                               
                                 @endforeach
 							</div><!-- /.row -->
 						</div><!--/.isotope-->

@@ -5,9 +5,9 @@
         {{ session('success') }}
     @endif
 
-@include('include.nav2')
+@include('include.nav')
 @include('include.hero')
-@include('include.about')
+@include('include.about2')
 @include('include.cities')
 @include('include.contact')
 
